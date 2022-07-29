@@ -21,7 +21,7 @@ Target.clearPrefetchCache();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -43,7 +43,7 @@ Target.clearPrefetchCache()
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -131,7 +131,7 @@ Target.locationClicked("cartLocation", targetParameters);
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -159,7 +159,7 @@ AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParame
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -308,7 +308,7 @@ Target.locationsDisplayed(mboxList, targetParameters);
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -344,7 +344,7 @@ AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParame
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -426,7 +426,7 @@ Target.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -448,7 +448,7 @@ NSString *targetVersion = [AEPMobileTarget extensionVersion];
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -491,7 +491,7 @@ ACPTarget.extensionVersion().then(version => {
 
 This API gets the Target session identifier. 
 
-The session Id is generated locally in the SDK upon initial Target request and persisted for a period defined by `target.sessionTimeout` configuration setting. If the session timeout happens upon a subsequent Target request, a new session Id will be generated for use in the request and persisted in the SDK.
+The session ID is generated locally in the SDK upon initial Target request and persisted for a period defined by `target.sessionTimeout` configuration setting. If the session timeout happens upon a subsequent Target request, a new session ID will be generated for use in the request and persisted in the SDK.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -515,7 +515,7 @@ Target.getSessionId(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -543,7 +543,7 @@ Target.getSessionId { (id, err) in
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 This API is not available in Target iOS ACP 2.x SDK.
 {% endtab %}
 {% endtabs %}
@@ -574,7 +574,7 @@ Target.getThirdPartyId(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -602,7 +602,7 @@ Target.getThirdPartyId { (id, err) in
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -651,9 +651,9 @@ ACPTarget.getThirdPartyId().then(thirdPartyId => {
 
 ### getTntId
 
-This API gets the Target user identifier \(also known as the `tntId`\). 
+This API gets the Target user identifier (also known as the `tntId`). 
 
-The tnt Id is returned in the network response from Target after a successful call to `prefetchContent` API or `retrieveLocationContent` API, which is then persisted in the SDK. The persisted tnt Id is used in subsequent Target requests until a different tnt Id is returned from Target, or a new tnt Id is set using `setTntId` API.
+The tnt ID is returned in the network response from Target after a successful call to `prefetchContent` API or `retrieveLocationContent` API, which is then persisted in the SDK. The persisted tnt ID is used in subsequent Target requests until a different tnt ID is returned from Target, or a new tnt ID is set using `setTntId` API.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -677,7 +677,7 @@ Target.getTntId(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -705,7 +705,7 @@ Target.getTntId({ (id, err) in
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -810,7 +810,7 @@ Target.prefetchContent(prefetchMboxesList, targetParameters, prefetchStatusCallb
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -897,7 +897,7 @@ product:product];
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -1070,11 +1070,11 @@ Target.registerExtension();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 This API no longer exists in `Target`. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial.](../../resources/migrate-to-swift.md#update-sdk-initialization)
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -1120,7 +1120,7 @@ Target.resetExperience();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -1142,7 +1142,7 @@ Target.resetExperience()
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -1286,7 +1286,7 @@ Target.retrieveLocationContent(locationRequests, parameters);
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -1401,7 +1401,7 @@ AEPTargetParameters *targetParameters = [[AEPTargetParameters alloc] initWithPar
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -1581,7 +1581,7 @@ Target.setPreviewRestartDeepLink("myapp://HomePage");
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -1607,7 +1607,7 @@ if let url = URL(string: "myapp://HomePage") {
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -1652,7 +1652,7 @@ ACPTarget.setPreviewRestartDeeplink("myapp://HomePage");
 
 This API sets the Target session identifier.
 
-The provided session Id is persisted in the SDK for a period defined by `target.sessionTimeout` configuration setting. If the provided sessionId is nil/null or empty, or if the privacy status is opted out, the SDK will remove the session Id value from the persistence.
+The provided session ID is persisted in the SDK for a period defined by `target.sessionTimeout` configuration setting. If the provided session ID is nil/null or empty, or if the privacy status is opted out, the SDK will remove the session ID value from the persistence.
 
 This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall, upon privacy status update to opted out, or when the resetExperience API is used.
 
@@ -1673,7 +1673,7 @@ Target.setSessionId("3f24b997-ea74-420c-81f8-96a8b92c3961");
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -1697,7 +1697,7 @@ Target.setSessionId("3f24b997-ea74-420c-81f8-96a8b92c3961")
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 This API is not available in Target iOS ACP 2.x SDK.
 {% endtab %}
 {% endtabs %}
@@ -1723,7 +1723,7 @@ Target.setThirdPartyId("third-party-id");
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -1747,7 +1747,7 @@ Target.setThirdPartyId("third-party-id")
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -1792,7 +1792,7 @@ ACPTarget.setThirdPartyId("third-party-id");
 
 This API sets the Target user identifier.
 
-The provided tnt Id is persisted in the SDK and attached to subsequent Target requests. It is used to derive the edge host value in the SDK, which is also persisted and used in future Target requests. If the provided tnt Id is nil/null or empty, or if the privacy status is opted out, the SDK will remove the tnt Id and edge host values from the persistence.
+The provided tnt ID is persisted in the SDK and attached to subsequent Target requests. It is used to derive the edge host value in the SDK, which is also persisted and used in future Target requests. If the provided tnt ID is nil/null or empty, or if the privacy status is opted out, the SDK will remove the tnt ID and edge host values from the persistence.
 
 This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall, upon privacy status update to opted out, or when the `resetExperience` API is used.
 
@@ -1813,7 +1813,7 @@ Target.setTntId("f741a5d5-09c0-4931-bf53-b9e568c5f782.35_0");
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -1837,7 +1837,7 @@ Target.setTntId("f741a5d5-09c0-4931-bf53-b9e568c5f782.35_0")
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 This API is not available in Target iOS ACP 2.x SDK.
 {% endtab %}
 {% endtabs %}
@@ -1855,7 +1855,7 @@ The SDK can only collect information from the launching Activity if [`setApplica
 {% endhint %}
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen.
 
 **Syntax**
@@ -1881,7 +1881,7 @@ MobileCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.ad
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen.
 
 **Syntax**
@@ -2128,7 +2128,7 @@ public interface AdobeTargetDetailedCallback {
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### TargetRequest
 
 ```swift
@@ -2342,7 +2342,7 @@ public class TargetProduct: NSObject, Codable {
 Examples for creating instances of TargetProduct can be seen [here](./README.md#target-product-class)
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### ACPTargetRequestObject
 
 This class extends `ACPTargetPrefetchObject` by adding default content and a callback block that will be invoked to return mbox content from Target.
