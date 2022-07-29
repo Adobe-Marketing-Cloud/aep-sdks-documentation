@@ -176,7 +176,9 @@
   * [Implementation - 中文–简体](resources/adobe-experience-platform-mini-programs-sdk/implementation-zhong-wen-1.md)
   * [Frequently Asked Questions](resources/adobe-experience-platform-mini-programs-sdk/faq.md)
 
-## BETA
+
+
+## ASSURANCE
 
 * [Adobe Experience Platform Assurance](beta/project-griffon/README.md)
   * [Set up Assurance](beta/project-griffon/set-up-project-griffon.md)
@@ -188,6 +190,11 @@
     * [Validation Summary](beta/project-griffon/using-project-griffon/validation-summary-and-project-griffon.md)
     * [On-device views](beta/project-griffon/using-project-griffon/on-device-views.md)
   * [Troubleshoot Assurance](beta/project-griffon/troubleshoot-project-griffon.md)
+
+
+
+## BETA
+
 * [Adobe Journey Optimizer - In-app messaging](beta/iam/README.md)
   * [Prerequisites](beta/iam/edge-and-launch-configuration.md)
   * [SDK Setup](beta/iam/setup-sdk.md)
