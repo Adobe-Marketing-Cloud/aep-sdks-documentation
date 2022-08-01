@@ -481,22 +481,22 @@ You should use the `MessagingPushPayload` class to extract the payload values.
 
 ```json
 {
-   "message":{
-      "android":{
-         "collapse_key": "new_message",
-         "priority": "HIGH",
-         "data":{
-            "adb_title":"Game Request",
-            "adb_body":"Bob wants to play chess",
+   "message" : {
+      "android" : {
+         "collapse_key" : "new_message",
+         "priority" : "HIGH",
+         "data" : {
+            "adb_title" : "Game Request",
+            "adb_body" : "Bob wants to play chess",
             "adb_sound" : "somesound_res",
             "adb_n_count" : "3",
-            "." : "PRIORITY_LOW",
-            "adb_channel_id": "cid",
+            "adb_n_priority" : "PRIORITY_LOW",
+            "adb_channel_id" : "cid",
             "adb_icon" : "notification_icon",
-            "adb_image": "www.imageUrl.com",           
-            "adb_a_type": "DEEPLINK/WEBURL/DISMISS",
+            "adb_image" : "www.imageUrl.com",           
+            "adb_a_type" : "DEEPLINK/WEBURL/DISMISS",
             "adb_uri" : "uri/weburl",
-            "adb_act": [
+            "adb_act" : [
                 {
                     "label" : "deeplink",
                     "uri" : "notificationapp://",
@@ -513,7 +513,7 @@ You should use the `MessagingPushPayload` class to extract the payload values.
                     "type" : "DISMISS"
                 }
             ],          
-            "some_custom_data_key": "some data"
+            "some_custom_data_key" : "some data"
          }
       }
    }
