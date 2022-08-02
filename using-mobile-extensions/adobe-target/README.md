@@ -548,13 +548,13 @@ If no Target request is received during the configured `target.sessionTimeout` o
 
 ### Cross-channel session support
 
-The Target extension (version 3.2.0 for iOS) and (version 1.3.0 for Android) now supports additional setters and getters for tnt ID and session ID to enable cross-channel sessions by using these APIs in conjunction with Target APIs on another channel e.g. at.js Javascript library. 
+The Target extension (version 3.2.0 for iOS) and (version 1.3.0 for Android) now supports additional setters and getters for the tnt ID and the session ID to enable cross-channel sessions by using these APIs in conjunction with Target APIs on another channel e.g. `at.js` Javascript library. 
 
-The session ID and tnt ID should be set in the mobile SDK prior to issuing any Target prefetch or execute requests. This will allow the SDK to do the following :
+The session ID and tnt ID should be set in the Mobile SDK prior to issuing any Target prefetch or execute requests. This will allow the SDK to do the following:
 
 * Persist and use the provided session ID in the subsequent Target request(s) instead of generating one locally and using it. The session expiry will be governed by the `target.sessionTimeout` SDK configuration setting.
 * Persist and use the provided tnt ID in the subsequent Target request(s).
-* Persist and use the Target edge host value, derived from the profile hint supplied in the tnt ID, in the subsequent Target request(s). For example: if the provided tnt ID value is `66E5C681-4F70-41A2-86AE-F1E151443B10.35_0`, the mobile SDK will set the Target edge host value to `mboxedge35.tt.omtrdc.net` (based on the supplied profile hint `35_0`).
+* Persist and use the Target edge host value, derived from the profile hint supplied in the tnt ID, in the subsequent Target request(s). For example: if the provided tnt ID value is `66E5C681-4F70-41A2-86AE-F1E151443B10.35_0`, the Mobile SDK will set the Target edge host value to `mboxedge35.tt.omtrdc.net` (based on the supplied profile hint `35_0`).
 
 Additionally, the current Target session ID and tnt ID values can be retrieved from the mobile SDK by using the corresponding getter APIs.
 

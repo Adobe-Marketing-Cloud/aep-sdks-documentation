@@ -6,7 +6,7 @@
 
 Added support for Target tnt ID and session ID getter and setter APIs to enable cross-channel sessions.
 
-* The `setSessionId` API should be invoked prior to any Target request to prevent the mobile SDK from generating one locally. The set session ID will follow the session expiry as governed by the `target.sessionTimeout` configuration setting. You can use this API in conjunction with `setTntId` API to set both the values in the SDK.
+* The `setSessionId` API should be invoked prior to any Target request to prevent the Mobile SDK from generating a session ID locally. The set session ID will follow the session expiry as governed by the `target.sessionTimeout` configuration setting. You can use this API in conjunction with `setTntId` API to set both of the value in the SDK.
 * The `setTntId` API, when invoked, also sets the Target edge host value in the SDK by deriving it from the profile location hint supplied in the tnt ID.
 * The `getSessionId` and `getTntId` APIs can be used to retrieve the current Target session ID and tnt ID values respectively. 
 
@@ -16,7 +16,7 @@ Added support for Target tnt ID and session ID getter and setter APIs to enable 
 
 Added support for Target tnt ID and session ID getter and setter APIs to enable cross-channel sessions.
 
-* The `setSessionId` API should be invoked prior to any Target request to prevent the mobile SDK from generating one locally. The set session ID will follow the session expiry as governed by the `target.sessionTimeout` configuration setting.You can use this API in conjunction with `setTntId` API to set both the values in the SDK.
+* The `setSessionId` API should be invoked prior to any Target request to prevent the Mobile SDK from generating a session ID locally. The set session ID will follow the session expiry as governed by the `target.sessionTimeout` configuration setting.You can use this API in conjunction with `setTntId` API to set both of the value in the SDK.
 * The `setTntId` API, when invoked, also sets the Target edge host value in the SDK by deriving it from the profile location hint supplied in the tnt ID.
 * The `getSessionId` and `getTntId` APIs can be used to retrieve the current Target session ID and tnt ID values respectively.
 
