@@ -1,5 +1,7 @@
 # Release Notes
 
+## August 2, 2022
+
 ### Android Target 1.3.0
 
 Added support for Target tnt ID and session ID getter and setter APIs to enable cross-channel sessions.
