@@ -542,13 +542,13 @@ When merging, the new keys in the mbox parameters or the profile parameters are 
 
 ## Target sessions
 
-The Target extension (version 2.1.4 for iOS) and (version 1.1.3 for Android) now supports persistent sessions. When a Target request is received, if a session ID does not exist, a new ID is generated and is sent in the request. This ID, with the Edge Host that is returned from Target, is kept in persistent storage for the configured `target.sessionTimeout` period. If the timeout value is not configured, the default value is 30 minutes.
+The Target extension (version 2.1.4 for iOS) and (version 1.1.3 for Android) now supports persistent sessions. When a Target request is received, a new session ID is generated and is sent in the request, if it does not exist. This ID, with the Edge Host that is returned from Target, is kept in persistent storage for the configured `target.sessionTimeout` period. If the timeout value is not configured, the default value is 30 minutes.
 
 If no Target request is received during the configured `target.sessionTimeout` or if the [resetExperience](./target-api-reference.md#resetExperience) API is called, these variables are reset and removed from persistent storage.
 
 ### Cross-channel session support
 
-The Target extension (version 3.2.0 for iOS) and (version 1.3.0 for Android) now supports additional setters and getters for the tnt ID and the session ID to enable cross-channel sessions by using these APIs in conjunction with Target APIs on another channel e.g. `at.js` Javascript library. 
+The Target extension (version 3.2.0 for iOS) and (version 1.3.0 for Android) now supports additional getter and setter APIs for Target tnt IDs and session IDs to enable cross-channel sessions by using these APIs in conjunction with Target APIs on another channel e.g. `at.js` Javascript library. 
 
 The session ID and tnt ID should be set in the Mobile SDK prior to issuing any Target prefetch or execute requests. This will allow the SDK to do the following:
 
