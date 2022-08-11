@@ -4,6 +4,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## August 10, 2022
+
+### iOS AEPCore 3.7.1
+
+* Made improvements to retry logic when downloading the remote Configuration fails
+* Made changes in Identity to speed up boot up
+* Fixed a bug where early events do not properly get processed by the rules engine
+* Improved Objective-C naming for MessagingDelegate methods
+* Updated UI classes to respect safe area when showing fullscreen messages
+
 ## August 2, 2022
 
 ### Android Target 1.3.0
