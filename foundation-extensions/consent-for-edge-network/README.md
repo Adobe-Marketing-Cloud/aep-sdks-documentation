@@ -17,7 +17,7 @@ In order to ingest and use the data collected by this extension, follow the guid
 {% endhint %}
 
 {% hint style="warning" %}
-The extension currently supports setting of client-side consent flags. While SDK APIs allow for granular consent preference collection, flags are not consistently enforced with upstream applications.
+The use of this extension is currently limited to the setting (and enforcement) of client-side, macro consent flags. While SDK APIs allow for granular consent preference collection, flags are not consistently enforced with upstream applications.
 {% endhint %}
 
 ## Add the AEP Consent extension to your app
