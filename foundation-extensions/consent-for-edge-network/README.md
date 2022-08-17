@@ -16,6 +16,10 @@ The Adobe Experience Platform Consent mobile extension enables consent preferenc
 In order to ingest and use the data collected by this extension, follow the guide on [ingesting data using the Consents and Preferences data type](https://experienceleague.adobe.com/docs/experience-platform/xdm/data-types/consents.html#ingest).
 {% endhint %}
 
+{% hint style="warning" %}
+The extension currently supports setting of client-side consent flags. While SDK APIs allow for granular consent preference collection, flags are not consistently enforced with upstream applications.
+{% endhint %}
+
 ## Add the AEP Consent extension to your app
 
 ### Download and import the Consent extension
