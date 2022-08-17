@@ -51,7 +51,7 @@ On older versions of Experience Platform Mobile SDKs \(prior to iOS version 1.6.
 
 ### Using Bundled Rules
 
-In addition to the remote configuration, you can also include a rules zip file in your app to be used by the SDK before rules have been downloaded from the Data Collection UI. This feature is supported in iOS SDK version 3.x, Android SDK version 1.9.2 onwards. To add bundled rules to your app, follow these steps:
+In addition to the remote configuration, you can also include a rules zip file in your app to be used by the SDK before rules have been downloaded from the Data Collection UI. This feature is supported in iOS SDK version 3.x, Android SDK version 1.11.2 onwards. To add bundled rules to your app, follow these steps:
 1. Download the rules zip file using the following URL: `https://assets.adobedtm.com/PASTE-ENVIRONMENT-ID-rules.zip` replacing `PASTE-ENVIRONMENT-ID` with your mobile property environment ID. 
 2. Rename the zip file to "ADBMobileConfig-rules.zip" and
    - iOS: Place the zip anywhere that it is accessible in your app bundle
