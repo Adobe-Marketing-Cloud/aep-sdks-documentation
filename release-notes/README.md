@@ -4,6 +4,17 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## August 18, 2022
+
+### Android Core 1.11.2
+
+* Added support for bundled rules.
+* Fixed a crash that can occur while extracting data from launch intent of an Android Activity.
+
+### Android Identity 1.3.2
+
+* Fixed a crash that can occur during construction of a query string of IDs.
+
 ## August 2, 2022
 
 ### Android Target 1.3.0
