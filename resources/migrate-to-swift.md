@@ -25,6 +25,7 @@ In addition to `ACPCore` being replaced with `AEPCore`, you will also need to ex
 | ACPPlaces | AEPPlaces |
 | AEPAssurance \(1.x\) | AEPAssurance \(3.x\) |
 | ACPCampaign | AEPCampaign |
+| ACPCampaignClassic | AEPCampaignClassic |
 
 ### Manual library import
 
@@ -181,4 +182,4 @@ Finally, you'll need to scan through your current implementation and replace ACP
 | [Adobe Audience](../using-mobile-extensions/adobe-audience-manager/) | [AEPAudience](../using-mobile-extensions/adobe-audience-manager/migration.md) |
 | [Adobe Experience Platform Target](../using-mobile-extensions/adobe-target/) | [AEPTarget](../using-mobile-extensions/adobe-target/migration.md) |
 | [Adobe Experience Platform Campaign](../using-mobile-extensions/adobe-campaign-standard/) | [AEPCampaign](../using-mobile-extensions/adobe-campaign-standard/migration.md) |
-
+| [Adobe Experience Platform Campaign Classic](../using-mobile-extensions/adobe-campaignclassic/) | [AEPCampaignClassic](../using-mobile-extensions/adobe-campaignclassic/migration.md) |
