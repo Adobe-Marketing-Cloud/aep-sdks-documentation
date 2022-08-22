@@ -180,6 +180,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
   [params setObject: [NSNumber numberWithBool:YES]  forKey: @"premium"];
 
 [AEPMobileCampaignClassic registerDeviceWithToken:deviceToken userKey:@"john@example.com" additionalParameters:params];
+}
 ```
 
 
