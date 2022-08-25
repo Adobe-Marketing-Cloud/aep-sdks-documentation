@@ -1,5 +1,11 @@
 # Release Notes
 
+## August 25, 2022
+
+### iOS ACPCore 2.9.6
+
+* Fix race conditions in HitQueue.
+
 ## August 18, 2022
 
 ### Android Core 1.11.2

@@ -3,6 +3,15 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ---
 
 # Release notes
+## August 25, 2022
+
+### iOS ACPCore 2.9.6
+
+* Fix race conditions in HitQueue.
+
+### iOS ACPAnalytics 2.5.4
+
+* Fix race conditions in AnalyticsHitQueue to prevent crash related to concurrent reset of database.
 
 ## August 18, 2022
 
