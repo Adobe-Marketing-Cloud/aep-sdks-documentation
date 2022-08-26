@@ -1,4 +1,9 @@
 # Release Notes
+## August 25, 2022
+
+### iOS ACPAnalytics 2.5.4
+
+* Fix race conditions in AnalyticsHitQueue to prevent crash related to concurrent reset of database.
 
 ## June 30, 2022
 
