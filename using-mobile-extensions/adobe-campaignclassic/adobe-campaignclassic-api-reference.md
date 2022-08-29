@@ -43,7 +43,7 @@ let campaignClassicVersion = CampaignClassic.extensionVersion
 **Syntax**
 
 ```objective-c
-+ (NSString * _Nonnull)extensionVersion
++ (nonnull NSString *)extensionVersion
 ```
 
 **Example**
@@ -140,7 +140,7 @@ public void onNewToken(String token) {
 To get your app ready to handle push notifications, see the tutorial on [configuring remote notification support](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1). After you receive the Apple Push Notification service (APNs) token, send this token and the device information to Campaign Classic using the `registerDevice` API.
 {% endhint %}
 
-The `registerDevice` API registers a device with your Campaign Classic registration server. It takes the APNS token as a parameter with a user key that identifies a user, such as an email address or a login name. You can also provide a map of the custom key-value pairs that you want to associate with the registration. A boolean value is returned in the callback, which signals whether the registration was successful.
+The `registerDevice` API registers a device with your Campaign Classic registration server. It takes the APNS token as a parameter with a user key that identifies a user, such as an email address or a login name. You can also provide a map of the custom key-value pairs that you want to associate with the registration.
 
 ### Swift
 
@@ -159,7 +159,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
     "serial": 12345,
     "premium": true
   ]
-  CampaignClassic.registerDevice(token: deviceToken, userKey: "johnDoe", additionalParameters: params)
+  CampaignClassic.registerDevice(token: deviceToken, userKey: "johnDoe@example.com", additionalParameters: params)
 }
 ```
 
@@ -168,14 +168,14 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 **Syntax**
 
 ```objectivec
-+ (void) registerDeviceWithToken: (nonnull NSData*) token userKey: (nullable NSString*) userKey additionalParams: (nullable NSDictionary*) additionalParams;
++ (void) registerDeviceWithToken:(nonnull NSData*)token userKey:(nullable NSString*)userKey additionalParams:(nullable NSDictionary<NSString *, id> *)additionalParams;
 ```
 
 **Example**
 
 ```objectivec
 - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:  @"John", @"name"];
+  NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:  @"John", @"name", nil];
   [params setObject: [NSNumber numberWithInt:12345] forKey: @"serial"];
   [params setObject: [NSNumber numberWithBool:YES]  forKey: @"premium"];
 
@@ -294,7 +294,7 @@ public void onResume() {
 {% tab title="iOS (AEP 3.x)" %}
 
 {% hint style="info" %}
-You can pass the `launchOptions` that were received upon opening the application or `userInfo`, which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
+You can pass the `launchOptions` that were received upon opening the application or `userInfo`, which contains the received push payload in `userInfo`. If `userInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
 {% endhint %}
 
 ### Swift
@@ -430,7 +430,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 {% tab title="iOS (AEP 3.x)" %}
 
 {% hint style="info" %}
-You can pass the `launchOptions` that were received upon opening the application or `userInfo` , which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
+You can pass the `launchOptions` that were received upon opening the application or `userInfo`, which contains the received push payload in `userInfo`. If `userInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
 {% endhint %}
 
 ### Swift
@@ -452,7 +452,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
   }
   if aps["content-available"] as? Int == 1 {
     // Track silent push notification receive
-		CampaignClassic.trackNotificationReceive(withUserInfo: userInfo)
+    CampaignClassic.trackNotificationReceive(withUserInfo: userInfo)
     completionHandler(.noData)
   }
 }
@@ -463,7 +463,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 **Syntax**
 
 ```objectivec
-+ (void) trackNotificationReceiveWithUserInfo: (nonnull NSDictionary<NSString*, NSString*>*) userInfo;
++ (void) trackNotificationReceiveWithUserInfo:(nonnull NSDictionary*) userInfo;
 ```
 
 **Example**
@@ -475,7 +475,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
   // Tracking silent push notification receive
   if ( [launchOptions[@"aps"][@"content-available"] intValue] == 1 ) {
     NSLog(@"Silent Push Notification");
-		[AEPMobileCampaignClassic trackNotificationReceiveWithUserInfo:userInfo];
+    [AEPMobileCampaignClassic trackNotificationReceiveWithUserInfo:userInfo];
     completionHandler(UIBackgroundFetchResultNoData);
   }
 }
@@ -496,7 +496,7 @@ You can pass the `launchOptions` that were received upon opening the application
 **Syntax**
 
 ```swift
-static func trackNotificationReceive(withUserInfo userInfo: [AnyHashable: Any])
+static func trackNotificationReceive(_ trackInfo: [String: String])
 ```
 
 **Example**
