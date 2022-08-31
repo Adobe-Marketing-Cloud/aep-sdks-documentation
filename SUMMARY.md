@@ -109,6 +109,7 @@
   * [Audience Manager API reference](using-mobile-extensions/adobe-audience-manager/audience-manager-api-reference.md)
   * [Audience Manager event reference](using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference.md)
 * [Adobe Campaign Classic](using-mobile-extensions/adobe-campaignclassic/README.md)
+  * [Migrating to AEPCampaignClassic reference](using-mobile-extensions/adobe-campaignclassic/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-campaignclassic/adobe-campaign-classic-release-notes.md)
   * [Campaign Classic API reference](using-mobile-extensions/adobe-campaignclassic/adobe-campaignclassic-api-reference.md)
   * [Campaign Classic event reference](using-mobile-extensions/adobe-campaignclassic/adobe-campaignclassic-event-reference.md)

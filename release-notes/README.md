@@ -13,6 +13,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Fix race conditions in AnalyticsHitQueue to prevent crash related to concurrent reset of database.
 
+## September 1, 2022
+
+### iOS Campaign Classic 3.0.0
+
+* Initial release to support [Adobe Campaign Classic workflows](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/master/using-mobile-extensions/adobe-campaignclassic) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is available as an [open source project on Github](https://github.com/adobe/aepsdk-campaignclassic-ios/).
+
 ## August 18, 2022
 
 ### Android Core 1.11.2
@@ -42,7 +48,7 @@ Added getter and setter APIs for Target tnt IDs and session IDs to enable cross-
 
 * The `setSessionId` API should be invoked prior to any Target request to prevent the Mobile SDK from generating a session ID locally. The session ID will follow the session expiry as governed by the `target.sessionTimeout` configuration setting. You can use this API in conjunction with `setTntId` API to set both of the value in the SDK.
 * The `setTntId` API, when invoked, also sets the Target edge host value in the SDK by deriving it from the profile location hint supplied in the tnt ID.
-* The `getSessionId` and `getTntId` APIs can be used to retrieve the current Target session ID and tnt ID values respectively. 
+* The `getSessionId` and `getTntId` APIs can be used to retrieve the current Target session ID and tnt ID values respectively.
 
 ## July 29, 2022
 
