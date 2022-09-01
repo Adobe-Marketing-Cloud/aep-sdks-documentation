@@ -3,6 +3,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ---
 
 # Release notes
+
+## September 1, 2022
+
+### iOS Campaign Classic 3.0.0
+
+* Initial release to support [Adobe Campaign Classic workflows](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/master/using-mobile-extensions/adobe-campaignclassic) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is available as an [open source project on Github](https://github.com/adobe/aepsdk-campaignclassic-ios/).
+
 ## August 25, 2022
 
 ### iOS ACPCore 2.9.6
@@ -12,12 +19,6 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ### iOS ACPAnalytics 2.5.4
 
 * Fix race conditions in AnalyticsHitQueue to prevent crash related to concurrent reset of database.
-
-## September 1, 2022
-
-### iOS Campaign Classic 3.0.0
-
-* Initial release to support [Adobe Campaign Classic workflows](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/master/using-mobile-extensions/adobe-campaignclassic) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is available as an [open source project on Github](https://github.com/adobe/aepsdk-campaignclassic-ios/).
 
 ## August 18, 2022
 
