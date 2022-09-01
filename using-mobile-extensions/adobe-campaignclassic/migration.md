@@ -108,6 +108,7 @@ static func trackNotificationClick(withUserInfo userInfo: [AnyHashable: Any])
 + (void) trackNotificationClick:(nonnull NSDictionary<NSString*, NSString*>*) trackInfo;
 ```
 {% endtab %}
+{% endtabs %}
 
 ### trackNotificationReceive
 
