@@ -4,6 +4,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## September 8, 2022
+
+### Android Core 1.11.3
+
+* Fixed a bug that prevents early events from being processed correctly by the rules engine.
+* Removed unnecessary `AtomicBoolean` usage while listening to Android Activity lifecycle changes.
+
 ## September 1, 2022
 
 ### iOS Campaign Classic 3.0.0

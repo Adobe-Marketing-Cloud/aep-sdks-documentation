@@ -1,5 +1,12 @@
 # Release Notes
 
+## September 8, 2022
+
+### Android Core 1.11.3
+
+* Fixed a bug that prevents early events from being processed correctly by the rules engine.
+* Removed unnecessary `AtomicBoolean` usage while listening to Android Activity lifecycle changes.
+
 ## August 25, 2022
 
 ### iOS ACPCore 2.9.6
