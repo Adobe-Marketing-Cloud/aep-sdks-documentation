@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## September 9, 2022
+
+### Android Core 1.11.4
+
+* Fixed a bug that prevents bundled rules from being retrieved from the correct location.
+
 ## September 8, 2022
 
 ### Android Core 1.11.3
