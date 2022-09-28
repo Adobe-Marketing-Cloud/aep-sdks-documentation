@@ -123,3 +123,10 @@ When the user clicks the button inside of this in-app message, the handler confi
 ```text
 JavaScript body passed to native callback: native callbacks are cool!
 ```
+
+#### Examples
+
+The test apps in AEPMessaging GitHub repository demonstrate using a `MessagingDelegate`:
+
+* [Swift](https://github.com/adobe/aepsdk-messaging-ios/tree/inbound-changes/TestApps/MessagingDemoApp)
+* [Objective-c](https://github.com/adobe/aepsdk-messaging-ios/tree/inbound-changes/TestApps/MessagingDemoAppObjC)
