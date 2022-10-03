@@ -5,6 +5,15 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 # Home
 
 {% hint style="info" %}
+## Good to go for iOS 16 and Android 13?
+
+Latest versions of the Adobe Experience Platform SDK for Google Android and Apple iOS (Swift & Objective-C) are tested for compatibilit with release verisons of Apple iOS 16 and Google Android 13. See [Current SDK Versions] (https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions) to find our latest SDK versions or [release notes](https://aep-sdks.gitbook.io/docs/release-notes) for information on changes and updates.
+
+{% endhint %}
+
+{% hint style="success" %}
+
+{% hint style="info" %}
 ## Interested in Kotlin?
 
 We're looking for feedback on how we can better support our customers using \(or planning to use\) [Kotlin](https://kotlinlang.org/) in their mobile apps.
