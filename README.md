@@ -13,14 +13,7 @@ Please take a [quick survey ](https://forms.office.com/r/5E5d7pJivG)a let us kno
 {% endhint %}
 
 {% hint style="success" %}
-## Swift SDKs are here!
 
-We've released Swift versions for our iOS SDKs - please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for available Swift extensions and reference documentation.
-
-The Swift iOS SDKs are open source! Read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
-{% endhint %}
-
-{% hint style="success" %}
 ## Support for Adobe Experience Platform Edge Network
 
 The Adobe Experience Platform Mobile SDKs support data collection and other features via the Edge Network.
