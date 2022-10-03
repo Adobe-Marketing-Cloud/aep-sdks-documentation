@@ -2,8 +2,6 @@
 description: Welcome to the home of Adobe Experience Platform Mobile SDK documentation.
 ---
 
-# Home
-
 {% hint style="success" %}
 ## Good to go for iOS 16 and Android 13
 
