@@ -1,11 +1,12 @@
-# Using Adobe Experience Platform Assurance
+{% hint style="success" %}
+## Project Griffon will be Assurance!
+We're pleased to annouce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transistion see [here]().
 
 {% hint style="warning" %}
 ## User Access Is Changing
 
 Starting October 15, 2022 access to Assurance UI will be managed via user profiles through the Admin Console. Please see [Assurance User Access](./assurance-user-access.md) for more details.  
 {% endhint %}
-
 
 ## Log in
 
