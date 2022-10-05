@@ -26,15 +26,15 @@ NOTE: you may use an existing profile and skip this step.
 {% endhint %}
 
    1. Select the "Products" tab, click the Adobe Experience Platform product card.  
-![Adobe Experience Platform Assurance analytics view](../../../.gitbook/assets/admin-console-aep-product.png)
+![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-product.png)
    2. Provide a name and save. 
 
       {% hint style="info" %}
       The Adobe Experience Platform product profile you intend to use for Assurance access does not need any additional permissions added. The default with no additional selections are sufficient.
       {% endhint %}
-      ![Adobe Experience Platform Assurance analytics view](../../../.gitbook/assets/admin-console-aep-new-product-profile.png)
+      ![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-new-product-profile.png)
 1. Assign users to the Adobe Experience Platform product profile
    1. Select the "Products" tab, click "Assign Users" on the Adobe Experience Platform.  
-![Adobe Experience Platform Assurance analytics view](../../../.gitbook/assets/admin-console-aep-product-assign.png)
+![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-product-assign.png)
    1. Add one or more users to the product profile and save.  
-![Adobe Experience Platform Assurance analytics view](../../../.gitbook/assets/admin-console-aep-product-user.png)
+![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-product-user.png)
