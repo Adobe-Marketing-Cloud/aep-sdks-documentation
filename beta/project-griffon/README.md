@@ -2,6 +2,15 @@
 
 Assurance is an [Adobe Experience Cloud](https://www.adobe.com/experience-cloud.html) product built to help you inspect, proof, simulate, and validate data collection and experience delivery workflows.
 
+## General Availability
+Starting October 15th, 2022 - Project Griffon will be generally availalbe to all Adobe Experience Cloud customers as Assurance.
+
+### What's changing?
+
+On October 15th - access to Assurance / Project Griffon will be managed through Admin Console. Follow (this link)[https://aep-sdks.gitbook.io/docs/adobe-assurance/project-griffon/get-access] to ensure continued, uninterrupted access.
+
+No other changes or disruption are expected to existing Assurance / Project Griffon integrations, sessions, and events. Assurance may be continued to be accessed via [https://griffon.adobe.com](https://griffon.adobe.com) OR you may use (and bookmark) [https://experience.adobe.com/assurance](https://experience.adobe.com/assurance).
+
 ## What can Assurance do for you?
 
 ### Quick Setup
