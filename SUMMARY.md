@@ -182,9 +182,9 @@
 ## ADOBE ASSURANCE
 
 * [Assurance](beta/project-griffon/README.md)
+  * [Get Access](beta/project-griffon/get-access.md)
   * [Set up Assurance](beta/project-griffon/set-up-project-griffon.md)
   * [Use Assurance](beta/project-griffon/using-project-griffon/README.md)
-    * [Assurance User Access](beta/project-griffon/using-project-griffon/assurance-user-access.md)
     * [Adobe Analytics](beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon.md)
     * [Adobe Analytics for Streaming Media](beta/project-griffon/using-project-griffon/adobe-analytics-streaming-media-and-project-griffon.md)
     * [Places Service](beta/project-griffon/using-project-griffon/location-service-and-project-griffon.md)
