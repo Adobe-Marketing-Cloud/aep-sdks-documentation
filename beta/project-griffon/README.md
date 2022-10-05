@@ -1,8 +1,6 @@
 # Adobe Experience Platform Assurance
 
-Assurance is a product from [Adobe Experience Cloud](https://www.adobe.com/experience-cloud.html) to help you inspect, proof, simulate, and validate how you collect data or serve experiences in your mobile app.
-
-We're building Assurance to do the heavy lifting of getting your app implementation right, while you focus on creating engaging experiences.
+Assurance is an [Adobe Experience Cloud](https://www.adobe.com/experience-cloud.html) product built to help you inspect, proof, simulate, and validate data collection and experience delivery workflows.
 
 ## What can Assurance do for you?
 
