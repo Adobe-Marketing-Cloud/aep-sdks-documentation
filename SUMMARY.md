@@ -179,9 +179,9 @@
 
 
 
-## ASSURANCE
+## ADOBE ASSURANCE
 
-* [Adobe Experience Platform Assurance](beta/project-griffon/README.md)
+* [Assurance](beta/project-griffon/README.md)
   * [Set up Assurance](beta/project-griffon/set-up-project-griffon.md)
   * [Use Assurance](beta/project-griffon/using-project-griffon/README.md)
     * [Assurance User Access](beta/project-griffon/using-project-griffon/assurance-user-access.md)
