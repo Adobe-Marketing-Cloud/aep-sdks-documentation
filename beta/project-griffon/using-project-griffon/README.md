@@ -5,8 +5,7 @@ We're pleased to annouce that Project Griffon will be generally available to all
 
 {% hint style="warning" %}
 ## User Access Is Changing
-
-Starting October 15, 2022 access to Assurance UI will be managed via user profiles through the Admin Console. Please see [Assurance User Access](./assurance-user-access.md) for more details.  
+As we make the transition from beta (Project Griffon) to being generally available (as Assurance) to all Adobe Experience Cloud customers - access to Project Griffon / Assurance is changing! Access to Assurance will be managed through the [Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html)
 {% endhint %}
 
 ## Log in
