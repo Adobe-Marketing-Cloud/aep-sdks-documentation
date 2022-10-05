@@ -28,7 +28,7 @@ Log into the [Admin Console](https://adminconsole.adobe.com/)
 
 ### Add users to product profile
 
-1. Provide a name and **save** - The Adobe Experience Platform product profile you intend to use for Assurance access does not need any additional permissions added. The default with no additional selections are sufficient.
+Provide a name and **save** - The Adobe Experience Platform product profile you intend to use for Assurance access does not need any additional permissions added. The default with no additional selections are sufficient.
 
 ![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-new-product-profile.png)
 
