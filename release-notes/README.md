@@ -4,6 +4,11 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+{% hint style="success" %}
+## Project Griffon will be Assurance!
+We're pleased to annouce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transistion see [here](../../beta/project-griffon/).
+{% endhint %}
+
 ## September 9, 2022
 
 ### Android Core 1.11.4
