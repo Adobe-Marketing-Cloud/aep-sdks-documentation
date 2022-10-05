@@ -30,7 +30,7 @@ Step 2. Provide a name and **save** - The Adobe Experience Platform product prof
 
    a. Assign users to the Adobe Experience Platform product profile
    b. Select the "Products" tab, click "Assign Users" on the Adobe Experience Platform.
-![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-product-assign.png)
+   ![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-product-assign.png)
    c. Add one or more users to the product profile and save.
 
 ![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-product-user.png)
