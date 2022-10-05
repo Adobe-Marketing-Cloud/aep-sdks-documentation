@@ -25,7 +25,8 @@ To receive or to maintain uninterrupted access to Project Griffon / Assurance, e
    {% endhint %}
    
    b. Select the "Products" tab, click the Adobe Experience Platform product card.
-   ![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-product.png)
+
+[Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-product.png)
 
 2. Provide a name and save.
    {% hint style="info" %}
@@ -33,9 +34,9 @@ To receive or to maintain uninterrupted access to Project Griffon / Assurance, e
    The default with no additional selections are sufficient.
    {% endhint %}
    
-   ![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-new-product-profile.png)
-      a. Assign users to the Adobe Experience Platform product profile
-      b. Select the "Products" tab, click "Assign Users" on the Adobe Experience Platform.
+![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-new-product-profile.png)
+   a. Assign users to the Adobe Experience Platform product profile
+   b. Select the "Products" tab, click "Assign Users" on the Adobe Experience Platform.
       ![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-product-assign.png)
       c. Add one or more users to the product profile and save.
       ![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-product-user.png)
