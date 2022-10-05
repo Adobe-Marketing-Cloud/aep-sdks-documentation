@@ -1,9 +1,18 @@
-# Using Adobe Experience Platform Assurance
+{% hint style="success" %}
+## Project Griffon will be Assurance!
+We're pleased to annouce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transistion see [here]().
+
+{% hint style="warning" %}
+## User Access Is Changing
+
+Starting October 15, 2022 access to Assurance UI will be managed via user profiles through the Admin Console. Please see [Assurance User Access](./assurance-user-access.md) for more details.  
+{% endhint %}
 
 ## Log in
 
-1. Visit [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon)
-2. Log in using your Adobe ID credentials for the Experience Cloud.
+1. Ask your org administrator to provide access. Please see [Assurance User Access](./assurance-user-access.md) for more details.
+2. Visit [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon)
+3. Log in using your Adobe ID credentials for the Experience Cloud.
 
    If you do not know your Adobe ID credentials, contact your Adobe administrator or see [how to log in](https://docs.adobe.com/content/help/en/core-services/interface/manage-users-and-products/getting-started-experience-cloud.html).
 
