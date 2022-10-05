@@ -1,5 +1,10 @@
 # Troubleshoot Adobe Experience Platform Assurance
 
+{% hint style="success" %}
+## Project Griffon will be Assurance!
+We're pleased to announce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transition see [here](../../beta/project-griffon/).
+{% endhint %}
+
 If you are having trouble getting Assurance to work, please see suggestions under the following issue topics to resolve commonly encountered issues.
 
 To enable smoother implementation and to discover any potential issues, ensure you have SDK logging turned on per [Enable Debug Logging](https://aep-sdks.gitbook.io/docs/getting-started/enable-debug-logging) in the Getting Started section.
