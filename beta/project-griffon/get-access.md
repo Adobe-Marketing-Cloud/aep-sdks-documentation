@@ -2,7 +2,7 @@
 
 {% hint style="success" %}
 ## Project Griffon will be Assurance!
-We're pleased to annouce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transistion see [here](../../beta/project-griffon/get-access.md).
+We're pleased to annouce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transistion see [here](../../beta/project-griffon/).
 {% endhint %}
 
 {% hint style="warning" %}
