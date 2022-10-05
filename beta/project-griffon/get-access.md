@@ -34,8 +34,8 @@ Log into the [Admin Console](https://adminconsole.adobe.com/)
 
    1. Assign users to the Adobe Experience Platform product profile
    2. Select the "Products" tab, click "Assign Users" on the Adobe Experience Platform.
-![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-product-assign.png)
    3. Add one or more users to the product profile and save.
-
-![Adobe Experience Platform Assurance analytics view](../../.gitbook/assets/admin-console-aep-product-user.png)
+ 
+![Assigning users to product profile](../../.gitbook/assets/admin-console-aep-product-assign.png)
+![Adding users to product profile](../../.gitbook/assets/admin-console-aep-product-user.png)
 
