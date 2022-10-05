@@ -7,7 +7,7 @@ Starting October 15th, 2022 - Project Griffon will be generally availalbe to all
 
 ### What's changing?
 
-On October 15th - access to Assurance / Project Griffon will be managed through Admin Console. Follow (this link)[https://aep-sdks.gitbook.io/docs/adobe-assurance/project-griffon/get-access] to ensure continued, uninterrupted access.
+On October 15th - access to Assurance / Project Griffon will be managed through Admin Console. Follow [this link](https://aep-sdks.gitbook.io/docs/adobe-assurance/project-griffon/get-access) to ensure continued, uninterrupted access.
 
 No other changes or disruption are expected to existing Assurance / Project Griffon integrations, sessions, and events. Assurance may be continued to be accessed via [https://griffon.adobe.com](https://griffon.adobe.com) OR you may use (and bookmark) [https://experience.adobe.com/assurance](https://experience.adobe.com/assurance).
 
