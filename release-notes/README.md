@@ -9,6 +9,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 We're pleased to announce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transition see [here](../../beta/project-griffon/).
 {% endhint %}
 
+## October 10, 2022
+
+### Android Optimize 1.0.1
+
+* Fixed an issue where Base64 encoding the JSON string, created using the `activityId` and `placementId` provided in the `DecisionScope` constructor, introduced a newline character in the encoded scope string.
+
 ## September 9, 2022
 
 ### Android Core 1.11.4
