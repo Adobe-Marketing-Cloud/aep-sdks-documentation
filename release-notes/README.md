@@ -26,7 +26,7 @@ We're pleased to announce that Project Griffon will be generally available to al
 
 ### Adobe Target extension 2.5.0
 
-* Added support for a new Event Type `Raw Request` in Adobe Target extension for creating rules on Experience Platform Data Collection UI. This can be used for handling advanced scenarios when using the raw Target APIs.
+* Added support for a new Event Type `Raw Request` in Adobe Target extension for creating rules on the Experience Platform Data Collection UI. This can be used for handling advanced scenarios when using the raw Target APIs.
 
 ## October 10, 2022
 
