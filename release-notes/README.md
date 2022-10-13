@@ -9,6 +9,25 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 We're pleased to announce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transition see [here](../../beta/project-griffon/).
 {% endhint %}
 
+## October 12, 2022
+
+### iOS AEPTarget 3.3.0
+
+* Added support for remote property token (`at_property`) updates via Experience Platform Data Collection rules.
+* Added support for raw Target APIs to fetch mbox content and to send notifications to Adobe Target.
+  * The `executeRawRequest` API can be used to prefetch or execute mbox locations (even non-unique mbox locations). The API callback will be invoked with the full response data from Adobe Target if the request is successful, or with an error message otherwise.
+  * The `sendRawNotifications` API can be used to send display or click notifications to Adobe Target. The event token required for these requests can be retrieved from the response of a prior prefetch or execute call via `executeRawRequest` API.
+
+### Android Target 1.4.0
+
+* Added support for raw Target APIs to fetch mbox content and to send notifications to Adobe Target.
+  * The `executeRawRequest` API can be used to prefetch or execute mbox locations (even non-unique mbox locations). The API callback will be invoked with the full response data from Adobe Target if the request is successful, or with a null value otherwise.
+  * The `sendRawNotifications` API can be used to send display or click notifications to Adobe Target. The event token required for these requests can be retrieved from the response of a prior prefetch or execute call via `executeRawRequest` API.
+
+### Adobe Target extension 2.5.0
+
+* Added support for a new Event Type `Raw Request` in Adobe Target extension for creating rules on the Experience Platform Data Collection UI. This can be used for handling advanced scenarios when using the raw Target APIs.
+
 ## October 10, 2022
 
 ### Android Optimize 1.0.1
