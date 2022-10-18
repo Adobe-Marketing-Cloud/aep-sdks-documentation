@@ -799,7 +799,7 @@ static func updateIdentities(with map: IdentityMap)
 
 ```swift
 let identityMap = IdentityMap()
-map.addItem(item: IdentityItem(id: "user@example.com"), withNamespace: "Email")
+identityMap.addItem(item: IdentityItem(id: "user@example.com"), withNamespace: "Email")
 Identity.updateIdentities(with: identityMap)
 ```
 
