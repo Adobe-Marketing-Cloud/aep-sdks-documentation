@@ -67,27 +67,27 @@ public protocol MessagingDelegate {
     /// Invoked when any message is displayed
     /// - Parameters:
     ///     - message: UIMessaging message that is being displayed
-    @objc
+    @objc(onShow:)
     func onShow(message: Showable)
 
     /// Invoked when any message is dismissed
     /// - Parameters:
     ///     - message: UIMessaging message that is being dismissed
-    @objc
+    @objc(onDismiss:)
     func onDismiss(message: Showable)
 
     /// Used to find whether messages should be shown or not
     /// - Parameters:
     ///     - message: UIMessaging message that is about to get displayed
     /// - Returns: true if the message should be shown else false
-    @objc
+    @objc(shouldShowMessage:)
     func shouldShowMessage(message: Showable) -> Bool
 
     /// Called when `message` loads a URL
     /// - Parameters:
     ///     - url: the `URL` being loaded by the `message`
     ///     - message: the Message loading a `URL`
-    @objc
+    @objc(urlLoaded:byMessage:)
     optional func urlLoaded(_ url: URL, byMessage message: Showable)
 }
 ```
@@ -354,6 +354,13 @@ public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
 
 {% endtab %}
 {% endtabs %}
+
+#### Examples
+
+The test apps in AEPMessaging GitHub repository demonstrate using a `MessagingDelegate`:
+
+* [Swift](https://github.com/adobe/aepsdk-messaging-ios/tree/inbound-changes/TestApps/MessagingDemoApp)
+* [Objective-c](https://github.com/adobe/aepsdk-messaging-ios/tree/inbound-changes/TestApps/MessagingDemoAppObjC)
 
 #### Further reading
 
