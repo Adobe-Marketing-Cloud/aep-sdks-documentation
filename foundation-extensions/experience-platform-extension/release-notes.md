@@ -1,5 +1,15 @@
 # Release Notes
 
+## October 19, 2022
+
+#### iOS AEPEdge 1.5.0
+
+* Adds support for persisting the location hint returned by the Edge Network for the duration of the session for an improved user experience. Includes new APIs `getLocationHint` and `setLocationHint` allowing hybrid applications to share the location hint across SDKs.
+
+#### Android Edge 1.4.0
+
+* Adds support for persisting the location hint returned by the Edge Network for the duration of the session for an improved user experience. Includes new APIs `getLocationHint` and `setLocationHint` allowing hybrid applications to share the location hint across SDKs.
+
 ## June 2, 2022
 
 ### iOS AEPEdge 1.4.1

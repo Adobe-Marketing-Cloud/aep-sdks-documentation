@@ -9,6 +9,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 We're pleased to announce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transition see [here](../../beta/project-griffon/).
 {% endhint %}
 
+## October 19, 2022
+
+#### iOS AEPEdge 1.5.0
+
+* Adds support for persisting the location hint returned by the Edge Network for the duration of the session for an improved user experience. Includes new APIs `getLocationHint` and `setLocationHint` allowing hybrid applications to share the location hint across SDKs.
+
+#### Android Edge 1.4.0
+
+* Adds support for persisting the location hint returned by the Edge Network for the duration of the session for an improved user experience. Includes new APIs `getLocationHint` and `setLocationHint` allowing hybrid applications to share the location hint across SDKs.
+
 ## October 12, 2022
 
 ### iOS AEPTarget 3.3.0
