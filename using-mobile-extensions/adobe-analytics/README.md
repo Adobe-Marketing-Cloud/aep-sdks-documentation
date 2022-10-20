@@ -141,7 +141,7 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
     @import AEPCore;
     @import AEPAnalytics;
     @import AEPIdentity;
-   ``` 
+   ```
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
@@ -322,7 +322,7 @@ In your app's `_:didFinishLaunchingWithOptions` function, register the Audience 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
    MobileCore.registerExtensions([Analytics.self, Identity.self], {
-   MobileCore.configureWith(appId: "yourAppId") 
+   MobileCore.configureWith(appId: "yourAppId")
  })  
  ...
 }
@@ -381,19 +381,19 @@ Analytics depends on the Identity extension and is automatically included in the
 {% tab title="React Native" %}
 ### JavaScript
 
-When using React Native, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
+When using React Native, register Analytics with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Flutter" %}
 ### Dart
 
-When using Flutter, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
+When using Flutter, register Analytics with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Cordova" %}
 ### Cordova
 
-When using Cordova, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
+When using Cordova, register Analytics with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}
@@ -410,7 +410,7 @@ public class MainScript : MonoBehaviour
     [MonoPInvokeCallback(typeof(AdobeStartCallback))]
     public static void HandleStartAdobeCallback()
     {   
-        ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d"); 
+        ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
     }
 
     // Start is called before the first frame update
@@ -767,7 +767,7 @@ ACPCore.TrackState("State Name", contextData);
 {% endtab %}
 {% endtabs %}
 
-The following video shows you how to use [trackState](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#trackstate) APIs to send data to Adobe Analytics. 
+The following video shows you how to use [trackState](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#trackstate) APIs to send data to Adobe Analytics.
 
 
 {% embed url="https://video.tv.adobe.com/v/26260/?quality=12" caption="" %}
@@ -840,9 +840,9 @@ NSDictionary *updatedConfig = @{@"analytics.server":@"sample.analytics.tracking.
 **Example**
 
 ```swift
-let updatedConfig = ["analytics.server":"sample.analytics.tracking.server", 
-                     "analytics.rsids":"rsid1,rsid2", 
-                     "analytics.batchLimit":10, 
+let updatedConfig = ["analytics.server":"sample.analytics.tracking.server",
+                     "analytics.rsids":"rsid1,rsid2",
+                     "analytics.batchLimit":10,
                      "analytics.offlineEnabled":true]
 ACPCore.updateConfiguration(updatedConfig)
 ```
