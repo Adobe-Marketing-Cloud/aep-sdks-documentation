@@ -15,8 +15,6 @@ We're pleased to announce that Project Griffon will be generally available to al
 
 The `Adobe Experience Platform Mobile SDK - Edge Bridge` extension is now available for iOS!
 
-This extension enables forwarding of Analytics track events to Adobe Edge Network when using the Adobe Experience Platform SDK and the Edge Network extension.
-
 With this release, the extension enables a drop-in solution for converting Adobe Analytics track events into Edge Network events. The configured Data Collection datastream for the mobile application can define a mapping of the track event's `contextdata` to an XDM schema using [Data Prep for Data Collection](https://experienceleague.adobe.com/docs/platform-learn/data-collection/edge-network/data-prep.html).
 
 For an end-to-end guide on how to use the extension, see the [Edge Bridge tutorial](https://github.com/adobe/aepsdk-edgebridge-ios/blob/main/Documentation/tutorials/edge-bridge-tutorial.md).
@@ -26,8 +24,6 @@ For an end-to-end guide on how to use the extension, see the [Edge Bridge tutori
 ### Android Edge Bridge 1.0.0
 
 The `Adobe Experience Platform Mobile SDK - Edge Bridge` extension is now available for Android!
-
-This extension enables forwarding of Analytics track events to Adobe Edge Network when using the Adobe Experience Platform SDK and the Edge Network extension.
 
 With this release, the extension enables a drop-in solution for converting Adobe Analytics track events into Edge Network events. The configured Data Collection datastream for the mobile application can define a mapping of the track event's `contextdata` to an XDM schema using [Data Prep for Data Collection](https://experienceleague.adobe.com/docs/platform-learn/data-collection/edge-network/data-prep.html).
 
