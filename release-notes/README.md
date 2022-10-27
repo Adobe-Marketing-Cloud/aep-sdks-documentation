@@ -8,6 +8,20 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ## Project Griffon will be Assurance!
 We're pleased to announce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transition see [here](../../beta/project-griffon/).
 {% endhint %}
+## October 26, 2022
+
+### Flutter AEPEdge 1.0.0
+
+* [Edge Network extension](https://pub.dev/packages/flutter_aepedge) is now supported in Flutter.
+
+### Flutter AEPEdgeIdentity 1.0.0
+
+* [Identity for Edge Network extension](https://pub.dev/packages/flutter_aepedgeidentity) is now supported in Flutter. 
+
+### Flutter AEPEdgeConsent 1.0.0
+
+* [Consent for Edge Network extension](https://pub.dev/packages/flutter_aepedgeconsent) is now supported in Flutter.
+
 
 ## October 25, 2022
 
