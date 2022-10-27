@@ -173,7 +173,7 @@ Beta versions of React Native Experience Platform Edge Network, Edge Identity, E
 
 ## Flutter (AEP 1.x) <a id="flutter-aep"></a>
 
-Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 1.10.0 or later**.
+Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 2.0.0 or later**.
 
 {% hint style="danger" %}
 Adobe Experience Platform Mobile SDK plugins for Flutter are compatible with [Android](current-sdk-versions.md#android) and [iOS — Swift ](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift) libraries, at this time.
