@@ -141,7 +141,6 @@ If you are currently using our ACP-prefix React Native libraries, please see [th
 |  [Assurance](https://aep-sdks.gitbook.io/docs/foundation-extensions/adobe-experience-platform-assurance)    |  [![npm version](https://img.shields.io/npm/v/@adobe/react-native-aepassurance.svg?color=green&label=%40adobe%2Freact-native-aepassurance&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-aepassurance)  |
 
 
-
 ## React Native (ACP 2.x) <a id="react-native-acp"></a>
 
 Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **version 0.60.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
@@ -167,9 +166,39 @@ For React Native, we recommend that you first install [Node.js](https://nodejs.o
 | [Adobe Target](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acptarget.svg?color=green&label=%40adobe%2Freact-native-acptarget&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acptarget) | [Link](https://github.com/adobe/react-native-acptarget) | [Sample](https://github.com/adobe/react-native-acptarget/tree/main/sample/ACPTargetSampleApp) |
 | [Adobe Campaign Standard](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpcampaign.svg?color=green&label=%40adobe%2Freact-native-acpcampaign&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpcampaign) | [Link](https://github.com/adobe/react-native-acpcampaign) | [Sample](https://github.com/adobe/react-native-acpcampaign/tree/main/sample/ACPCampaignSampleApp) |
 
-{% hint style="info" %}
-Beta versions of React Native Experience Platform Edge Network, Edge Identity, Edge Consent, Messaging and Assurance can be found in the repository link [here](https://github.com/adobe/aepsdk-react-native). These new beta extensions require the latest AEP Core to opperate. See [`README`](https://github.com/adobe/aepsdk-react-native/blob/main/README.md) for further information on installation and configuration.
+## Flutter (AEP 1.x) <a id="flutter-aep"></a>
+
+Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 2.0.0 or later**. For the latest installation instructions, see the `README` file in the [`aepsdk-flutter`](https://github.com/adobe/aepsdk_flutter#installation) repository.
+
+{% hint style="danger" %}
+Adobe Experience Platform Mobile SDK plugins for Flutter are compatible with [Android](current-sdk-versions.md#android) and [iOS — Swift ](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift) libraries, at this time.
 {% endhint %}
+
+| Extension | pub.dev |
+| :--- | :--- |
+| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![pub package](https://img.shields.io/pub/v/flutter_aepcore.svg)](https://pub.dartlang.org/packages/flutter_aepcore) |
+| [Edge](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension) | [![pub package](https://img.shields.io/pub/v/flutter_aepedge.svg)](https://pub.dartlang.org/packages/flutter_aepedge) |
+| [EdgeIdentity](https://aep-sdks.gitbook.io/docs/foundation-extensions/identity-for-edge-network) | [![pub package](https://img.shields.io/pub/v/flutter_aepedgeidentity.svg)](https://pub.dartlang.org/packages/flutter_aepedgeidentity) |
+| [EdgeConsent](https://aep-sdks.gitbook.io/docs/foundation-extensions/consent-for-edge-network) | [![pub package](https://img.shields.io/pub/v/flutter_aepedgeconsent.svg)](https://pub.dartlang.org/packages/flutter_aepedgeconsent) |
+| [Assurance](https://aep-sdks.gitbook.io/docs/foundation-extensions/adobe-experience-platform-assurance) | [![pub package](https://img.shields.io/pub/v/flutter_aepassurance.svg)](https://pub.dartlang.org/packages/flutter_aepassurance) |
+
+
+## Flutter (ACP 2.x) <a id="flutter-acp"></a>
+
+Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 1.10.0 or later**.
+
+{% hint style="danger" %}
+Adobe Experience Platform Mobile SDK plugins for Flutter are compatible only with [Android](current-sdk-versions.md#android) and [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
+{% endhint %}
+
+| Extension | pub.dev | Github | Sample App |
+| :--- | :--- | :--- | :--- |
+| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![pub package](https://img.shields.io/pub/v/flutter_acpcore.svg)](https://pub.dartlang.org/packages/flutter_acpcore) | [Link](https://github.com/adobe/flutter_acpcore) | [Sample](https://github.com/adobe/flutter_acpcore/tree/master/example) |
+| [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile#flutter) | [![pub package](https://img.shields.io/pub/v/flutter_acpuserprofile.svg)](https://pub.dartlang.org/packages/flutter_acpuserprofile) | [Link](https://github.com/adobe/flutter-acpuserprofile) | [Sample](https://github.com/adobe/flutter_acpuserprofile/tree/master/example) |
+| [Places Service](https://experienceleague.adobe.com/docs/places/using/home.html?lang=en) | [![pub package](https://img.shields.io/pub/v/flutter_acpplaces.svg)](https://pub.dartlang.org/packages/flutter_acpplaces) | [Link](https://github.com/adobe/flutter-acpplaces) | [Sample](https://github.com/adobe/flutter_acpplaces/tree/master/example) |
+| [Places Monitor](https://experienceleague.adobe.com/docs/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html?lang=en) | [![pub package](https://img.shields.io/pub/v/flutter_acpplaces_monitor.svg)](https://pub.dartlang.org/packages/flutter_acpplaces_monitor) | [Link](https://github.com/adobe/flutter-acpplaces_monitor) | [Sample](https://github.com/adobe/flutter_acpplaces_monitor/tree/master/example) |
+| [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) | [![pub package](https://img.shields.io/pub/v/flutter_assurance.svg)](https://pub.dartlang.org/packages/flutter_assurance) | [Link](https://github.com/adobe/flutter_assurance) | [Sample](https://github.com/adobe/flutter_assurance/tree/master/example) |
+| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![pub package](https://img.shields.io/pub/v/flutter_acpanalytics.svg)](https://pub.dartlang.org/packages/flutter_acpanalytics) | [Link](https://github.com/adobe/flutter_acpanalytics) | [Sample](https://github.com/adobe/flutter_acpanalytics/tree/master/example) |
 
 ## Cordova
 
@@ -205,23 +234,6 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 | [Places Service](https://experienceleague.adobe.com/docs/places/using/home.html?lang=en) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpplaces?label=cordova-acpplaces&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpplaces) | [Link](https://github.com/adobe/cordova-acpplaces) |
 | [Places Monitor](https://experienceleague.adobe.com/docs/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html?lang=en) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpplacesmonitor?label=cordova-acpplacesmonitor&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpplacesmonitor) | [Link](https://github.com/adobe/cordova-acpplaces-monitor) |
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpanalytics?label=cordova-acpanalytics&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpanalytics) | [Link](https://github.com/adobe/cordova-acpanalytics) |
-
-## Flutter
-
-Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 1.10.0 or later**.
-
-{% hint style="danger" %}
-Adobe Experience Platform Mobile SDK plugins for Flutter are compatible only with [Android](current-sdk-versions.md#android) and [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
-{% endhint %}
-
-| Extension | pub.dev | Github | Sample App |
-| :--- | :--- | :--- | :--- |
-| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![pub package](https://img.shields.io/pub/v/flutter_acpcore.svg)](https://pub.dartlang.org/packages/flutter_acpcore) | [Link](https://github.com/adobe/flutter_acpcore) | [Sample](https://github.com/adobe/flutter_acpcore/tree/master/example) |
-| [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile#flutter) | [![pub package](https://img.shields.io/pub/v/flutter_acpuserprofile.svg)](https://pub.dartlang.org/packages/flutter_acpuserprofile) | [Link](https://github.com/adobe/flutter-acpuserprofile) | [Sample](https://github.com/adobe/flutter_acpuserprofile/tree/master/example) |
-| [Places Service](https://experienceleague.adobe.com/docs/places/using/home.html?lang=en) | [![pub package](https://img.shields.io/pub/v/flutter_acpplaces.svg)](https://pub.dartlang.org/packages/flutter_acpplaces) | [Link](https://github.com/adobe/flutter-acpplaces) | [Sample](https://github.com/adobe/flutter_acpplaces/tree/master/example) |
-| [Places Monitor](https://experienceleague.adobe.com/docs/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html?lang=en) | [![pub package](https://img.shields.io/pub/v/flutter_acpplaces_monitor.svg)](https://pub.dartlang.org/packages/flutter_acpplaces_monitor) | [Link](https://github.com/adobe/flutter-acpplaces_monitor) | [Sample](https://github.com/adobe/flutter_acpplaces_monitor/tree/master/example) |
-| [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) | [![pub package](https://img.shields.io/pub/v/flutter_assurance.svg)](https://pub.dartlang.org/packages/flutter_assurance) | [Link](https://github.com/adobe/flutter_assurance) | [Sample](https://github.com/adobe/flutter_assurance/tree/master/example) |
-| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![pub package](https://img.shields.io/pub/v/flutter_acpanalytics.svg)](https://pub.dartlang.org/packages/flutter_acpanalytics) | [Link](https://github.com/adobe/flutter_acpanalytics) | [Sample](https://github.com/adobe/flutter_acpanalytics/tree/master/example) |
 
 ## Xamarin
 
