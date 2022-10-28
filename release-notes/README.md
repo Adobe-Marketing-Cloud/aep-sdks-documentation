@@ -8,6 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ## Project Griffon will be Assurance!
 We're pleased to announce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transition see [here](../../beta/project-griffon/).
 {% endhint %}
+
 ## October 26, 2022
 
 ### AEP Flutter plugins for Edge Network
