@@ -10,18 +10,13 @@ We're pleased to announce that Project Griffon will be generally available to al
 {% endhint %}
 ## October 26, 2022
 
-### Flutter AEPEdge 1.0.0
+### AEP Flutter plugins for Edge Network
 
-* [Edge Network extension](https://pub.dev/packages/flutter_aepedge) is now supported in Flutter.
+The following AEP Flutter plugins have been published:
 
-### Flutter AEPEdgeIdentity 1.0.0
-
-* [Identity for Edge Network extension](https://pub.dev/packages/flutter_aepedgeidentity) is now supported in Flutter. 
-
-### Flutter AEPEdgeConsent 1.0.0
-
-* [Consent for Edge Network extension](https://pub.dev/packages/flutter_aepedgeconsent) is now supported in Flutter.
-
+* [flutter_aepedge@1.0.0](https://pub.dev/packages/flutter_aepedge)
+* [flutter_aepedgeidentity@1.0.0](https://pub.dev/packages/flutter_aepedgeidentity)
+* [flutter_aepedgeconsent@1.0.0](https://pub.dev/packages/flutter_aepedgeconsent)
 
 ## October 25, 2022
 
