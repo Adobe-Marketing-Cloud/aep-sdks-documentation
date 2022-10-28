@@ -1,8 +1,8 @@
-# Validation Summary
+# Validation Editor
 
 ## Overview
 
-You may use the Validation Summary feature to quickly and easily manage JavaScript functions to validate events in an Adobe Experience Platform Assurance session. Each function receives the events in an Assurance session. You can write functions to validate your client configuration, event conditions, tests and use cases.
+You may use the Validation Editor feature to quickly and easily manage JavaScript functions to validate events in an Adobe Experience Platform Assurance session. Each function receives the events in an Assurance session. You can write functions to validate your client configuration, event conditions, tests and use cases.
 
 ## Getting Started
 
@@ -10,13 +10,9 @@ To use this view, complete the following steps:
 
 1. [Setup Adobe Experience Platform Assurance](../set-up-project-griffon.md)
 2. [Create](./#creating-sessions) and [connect](./#connecting-to-a-session) to a Assurance session
-3. In the **Home** view, select **Validation Summary**
+3. In the **Home** view, select **Validation Editor**
 
-![Validation Summary](../../../.gitbook/assets/screen-shot-2021-02-08-at-2.49.28-pm.png)
-
-## Validation Management
-
-When the view is loaded, it provides a panel on the left that contains a categorized list of validation results and a panel on the right to create and edit JavaScript validation functions.
+![Validation-Editor-Screen-Shot](https://user-images.githubusercontent.com/6597105/198680074-f548a646-6f2f-4a65-82fd-0f1687d869bf.png)
 
 ## Writing a Validation Function
 
@@ -25,9 +21,8 @@ This feature allows you to create, edit, or delete validation functions for your
 1. Select **Create a New Validation**.
 2. Enter a **name** to identify the validation, then provide a **category** and a **description**.
 3. Edit the code in the editor to validate the events for your Assurance session.
-4. Click **Test** to preview the results of the function in the left panel.
 
-After you have tested your function, you can click **Upload** to save your validation.
+The validation function will automatically be tested after any text changes in the code editor. After you have tested your function, you can click **Publish** to save your validation.
 
 ### Event Definition
 
@@ -51,29 +46,29 @@ After you have tested your function, you can click **Upload** to save your valid
 
 ### Returning Validation Results
 
-To execute the function in the code editor, click **Test**. The function is expected to return an object that contains the following:
+The validation function is expected to return an object that contains the following:
 
 | Key | Type | Description |
 | :--- | :--- | :--- | 
 | `message` | String | The validation message to display in the summary results. |
 | `events` | Array | An array of event uuids to be reported as matched or not matched. |
+| `links` | Array | An array of ValidationResultLink objects {( type: 'doc'|'product', url: String )} to reference documentation and other resources |
 | `result` | String | This is the validation result and is expected to be one of the enumerated strings: "matched", "not matched", "unknown" |
-
-![](../../../.gitbook/assets/griffon-custom-validation-invalid.png)
 
 ## Viewing Results
 
-The left panel displays the results of all enabled validations, including the tested function in the right panel.
+The results of the function will be displayed in the results section just below the code editor. When a validation result is `unknown` or `not matched` and the `events` array has one or more `uuids`, then those events will be highlighted in the timeline with the following colors:
+* Green - matched
+* Orange - unknown
+* Red - not matched
 
-When a validation result is `unknown` or `not matched` and the `events` array has one or more `uuids`, the left panel will render a link with the count of events that are not matched. Clicking on the link will render a popover that contains a list of views. Selecting one of the views will navigate you to that view and will select those events not matched.
-
-![](../../../.gitbook/assets/screen-shot-2021-02-11-at-10.15.06-am.png)
+![Timeling-Validation-Highlights-Screen-Shot](https://user-images.githubusercontent.com/6597105/198681412-93d10a5a-3212-4e85-850a-aeaf5caf0521.png)
 
 ## Troubleshooting
 
-If an error occurs in the JavaScript code editor, an `ERROR` status is displayed, and the reason for the error is output to the browser's developer console.
+You can add `console.log()` in your function to print items to the developer console. Alternatively, you can use the message property of the result object to debug messages to the results panel.
 
-Additionally, you can also reach out to our team on our Slack Channel at [https://projectgriffon.slack.com/](https://projectgriffon.slack.com/).
+If an error occurs in the JavaScript code editor, an error status is displayed along with the reason.
 
 To learn more about validations, you can visit the [Adobe Experience Platform Assurance Validations](https://github.com/adobe/griffon-validation-plugins) GitHub. There you can find examples from validations owned by Adobe, as well as the [wiki](https://github.com/adobe/griffon-validation-plugins/wiki) that describes validations in more detail.
 
