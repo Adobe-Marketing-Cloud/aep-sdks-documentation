@@ -141,7 +141,6 @@ If you are currently using our ACP-prefix React Native libraries, please see [th
 |  [Assurance](https://aep-sdks.gitbook.io/docs/foundation-extensions/adobe-experience-platform-assurance)    |  [![npm version](https://img.shields.io/npm/v/@adobe/react-native-aepassurance.svg?color=green&label=%40adobe%2Freact-native-aepassurance&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-aepassurance)  |
 
 
-
 ## React Native (ACP 2.x) <a id="react-native-acp"></a>
 
 Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **version 0.60.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
@@ -167,15 +166,9 @@ For React Native, we recommend that you first install [Node.js](https://nodejs.o
 | [Adobe Target](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acptarget.svg?color=green&label=%40adobe%2Freact-native-acptarget&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acptarget) | [Link](https://github.com/adobe/react-native-acptarget) | [Sample](https://github.com/adobe/react-native-acptarget/tree/main/sample/ACPTargetSampleApp) |
 | [Adobe Campaign Standard](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpcampaign.svg?color=green&label=%40adobe%2Freact-native-acpcampaign&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpcampaign) | [Link](https://github.com/adobe/react-native-acpcampaign) | [Sample](https://github.com/adobe/react-native-acpcampaign/tree/main/sample/ACPCampaignSampleApp) |
 
-{% hint style="info" %}
-Beta versions of React Native Experience Platform Edge Network, Edge Identity, Edge Consent, Messaging and Assurance can be found in the repository link [here](https://github.com/adobe/aepsdk-react-native). These new beta extensions require the latest AEP Core to opperate. See [`README`](https://github.com/adobe/aepsdk-react-native/blob/main/README.md) for further information on installation and configuration.
-{% endhint %}
-
 ## Flutter (AEP 1.x) <a id="flutter-aep"></a>
 
 Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 2.0.0 or later**. For the latest installation instructions, see the `README` file in the [`aepsdk-flutter`](https://github.com/adobe/aepsdk_flutter#installation) repository.
-
-Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 2.0.0 or later**.
 
 {% hint style="danger" %}
 Adobe Experience Platform Mobile SDK plugins for Flutter are compatible with [Android](current-sdk-versions.md#android) and [iOS — Swift ](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift) libraries, at this time.
