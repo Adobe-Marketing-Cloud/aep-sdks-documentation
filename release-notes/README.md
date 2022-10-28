@@ -9,6 +9,14 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 We're pleased to announce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transition see [here](../../beta/project-griffon/).
 {% endhint %}
 
+## October 27, 2022
+
+### iOS AEPCore 3.7.2
+
+* Added location hint result to EventSource keys for Edge.
+* Fixed a bug preventing in-app messages from being dismissed in some situations.
+* Added Target identities to MobileCore.getSDKIdentities response.
+
 ## October 26, 2022
 
 ### AEP Flutter plugins for Edge Network
