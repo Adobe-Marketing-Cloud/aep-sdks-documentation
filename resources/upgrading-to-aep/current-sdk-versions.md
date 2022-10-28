@@ -173,19 +173,22 @@ Beta versions of React Native Experience Platform Edge Network, Edge Identity, E
 
 ## Flutter (AEP 1.x) <a id="flutter-aep"></a>
 
+Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 2.0.0 or later**. For the latest installation instructions, see the `README` file in the [`aepsdk-flutter`](https://github.com/adobe/aepsdk_flutter#installation) repository.
+
 Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 2.0.0 or later**.
 
 {% hint style="danger" %}
 Adobe Experience Platform Mobile SDK plugins for Flutter are compatible with [Android](current-sdk-versions.md#android) and [iOS — Swift ](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift) libraries, at this time.
 {% endhint %}
 
-| Extension | pub.dev | Github | Sample App |
-| :--- | :--- | :--- | :--- |
-| [Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![pub package](https://img.shields.io/pub/v/flutter_aepcore.svg)](https://pub.dartlang.org/packages/flutter_aepcore) | [Link](https://github.com/adobe/aepsdk_flutter/tree/main/plugins/flutter_aepcore) | [Sample](https://github.com/adobe/aepsdk_flutter/tree/main/example) |
-| [Assurance](https://aep-sdks.gitbook.io/docs/foundation-extensions/adobe-experience-platform-assurance) | [![pub package](https://img.shields.io/pub/v/flutter_aepassurance.svg)](https://pub.dartlang.org/packages/flutter_aepassurance) | [Link](https://github.com/adobe/aepsdk_flutter/tree/main/plugins/flutter_aepassurance) | [Sample](https://github.com/adobe/aepsdk_flutter/tree/main/example) |
-| [Edge](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension) | [![pub package](https://img.shields.io/pub/v/flutter_aepedge.svg)](https://pub.dartlang.org/packages/flutter_aepedge) | [Link](https://github.com/adobe/aepsdk_flutter/tree/main/plugins/flutter_aepedge) | [Sample](https://github.com/adobe/aepsdk_flutter/tree/main/example) |
-| [Consent](https://aep-sdks.gitbook.io/docs/foundation-extensions/consent-for-edge-network) | [![pub package](https://img.shields.io/pub/v/flutter_aepedgeconsent.svg)](https://pub.dartlang.org/packages/flutter_aepedgeconsent) | [Link](https://github.com/adobe/aepsdk_flutter/tree/main/plugins/flutter_aepedgeconsent) | [Sample](https://github.com/adobe/aepsdk_flutter/tree/main/example) |
-| [EdgeIdentity](https://aep-sdks.gitbook.io/docs/foundation-extensions/identity-for-edge-network) | [![pub package](https://img.shields.io/pub/v/flutter_aepedgeidentity.svg)](https://pub.dartlang.org/packages/flutter_aepedgeidentity) | [Link](https://github.com/adobe/aepsdk_flutter/tree/main/plugins/flutter_aepedgeidentity) | [Sample](https://github.com/adobe/aepsdk_flutter/tree/main/example) |
+| Extension | pub.dev |
+| :--- | :--- |
+| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![pub package](https://img.shields.io/pub/v/flutter_aepcore.svg)](https://pub.dartlang.org/packages/flutter_aepcore) |
+| [Edge](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension) | [![pub package](https://img.shields.io/pub/v/flutter_aepedge.svg)](https://pub.dartlang.org/packages/flutter_aepedge) |
+| [EdgeIdentity](https://aep-sdks.gitbook.io/docs/foundation-extensions/identity-for-edge-network) | [![pub package](https://img.shields.io/pub/v/flutter_aepedgeidentity.svg)](https://pub.dartlang.org/packages/flutter_aepedgeidentity) |
+| [EdgeConsent](https://aep-sdks.gitbook.io/docs/foundation-extensions/consent-for-edge-network) | [![pub package](https://img.shields.io/pub/v/flutter_aepedgeconsent.svg)](https://pub.dartlang.org/packages/flutter_aepedgeconsent) |
+| [Assurance](https://aep-sdks.gitbook.io/docs/foundation-extensions/adobe-experience-platform-assurance) | [![pub package](https://img.shields.io/pub/v/flutter_aepassurance.svg)](https://pub.dartlang.org/packages/flutter_aepassurance) |
+
 
 ## Flutter (ACP 2.x) <a id="flutter-acp"></a>
 
