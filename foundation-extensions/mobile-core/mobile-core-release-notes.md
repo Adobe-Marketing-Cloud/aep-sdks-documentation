@@ -1,5 +1,13 @@
 # Release Notes
 
+## October 27, 2022
+
+### iOS AEPCore 3.7.2
+
+* Added location hint result to EventSource keys for Edge.
+* Fixed a bug preventing in-app messages from being dismissed in some situations.
+* Added Target identities to MobileCore.getSDKIdentities response.
+
 ## September 9, 2022
 
 ### Android Core 1.11.4
