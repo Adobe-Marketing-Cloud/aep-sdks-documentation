@@ -10,7 +10,7 @@ As we make the transition from beta (Project Griffon) to being generally availab
 
 ## Log in
 
-1. Ask your org administrator to provide access. Please see [Assurance User Access](./assurance-user-access.md) for more details.
+1. Ask your org administrator to provide access. See [Assurance User Access](https://aep-sdks.gitbook.io/docs/adobe-assurance/project-griffon/get-access#set-up-access) for more details.
 2. Visit [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon)
 3. Log in using your Adobe ID credentials for the Experience Cloud.
 
