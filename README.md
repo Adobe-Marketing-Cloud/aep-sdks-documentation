@@ -2,6 +2,13 @@
 description: Welcome to the home of Adobe Experience Platform Mobile SDK documentation.
 ---
 
+{% hint style="danger" %}
+## The Mobile SDK documentation has moved!
+
+The Adobe Experience Platform Mobile SDK documentation has now moved. The latest version of the documentation can be found at the [Adobe Developer site](https://developer.adobe.com/client-sdks/documentation/) at https://developer.adobe.com/client-sdks/documentation/.
+
+{% endhint %}
+
 {% hint style="success" %}
 ## Good to go for iOS 16 and Android 13
 
