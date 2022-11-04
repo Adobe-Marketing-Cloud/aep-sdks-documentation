@@ -1,5 +1,12 @@
 # Version 4 Mobile SDKs end-of-support FAQ
 
+{% hint style="info" %}
+## The Mobile SDK documentation has moved!
+
+The Adobe Experience Platform Mobile SDK documentation has now moved. The latest version of the documentation can be found at https://developer.adobe.com/client-sdks/documentation/.
+
+{% endhint %}
+
 ## Update on end of support for version 4 Mobile SDKs
 
 {% hint style="warning" %}
