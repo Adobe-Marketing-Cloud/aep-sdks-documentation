@@ -1,6 +1,13 @@
 # Current SDK Versions
 
 {% hint style="info" %}
+## The Mobile SDK documentation has moved!
+
+The Adobe Experience Platform Mobile SDK documentation has now moved. The latest version of the documentation can be found at https://developer.adobe.com/client-sdks/documentation/.
+
+{% endhint %}
+
+{% hint style="info" %}
 ## Swift SDKs are here!
 
 We've released Swift versions of our iOS SDKs for Core and select extensions - please [scroll down](current-sdk-versions.md#ios-swift) for available Swift extensions and reference documentation for more information.
