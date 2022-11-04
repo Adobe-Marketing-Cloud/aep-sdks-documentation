@@ -1,5 +1,12 @@
 # Version 4 API Changelog
 
+{% hint style="info" %}
+## The Mobile SDK documentation has moved!
+
+The Adobe Experience Platform Mobile SDK documentation has now moved. The latest version of the documentation can be found at https://developer.adobe.com/client-sdks/documentation/.
+
+{% endhint %}
+
 This page details SDK API changes between the Experience Platform SDKs and 4x SDKs.
 
 ## Mobile Core APIs <a id="audience-manager-extension-apis"></a>
