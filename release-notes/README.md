@@ -16,6 +16,12 @@ The Adobe Experience Platform Mobile SDK documentation has now moved. The latest
 We're pleased to announce that Project Griffon will be generally available to all Adobe Experience Cloud customers as Assurance. To learn more about this transition see [here](../../beta/project-griffon/).
 {% endhint %}
 
+## November 11, 2022
+
+### iOS AEPCore 3.7.3
+
+* Fixed a bug in AEPIdentity where CustomerIdentities with the same type could cause a crash.
+
 ## October 27, 2022
 
 ### iOS AEPCore 3.7.2

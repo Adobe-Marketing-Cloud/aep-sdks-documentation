@@ -1,5 +1,11 @@
 # Release Notes
 
+## November 11, 2022
+
+### iOS AEPCore 3.7.3
+
+* Fixed a bug in AEPIdentity where CustomerIdentities with the same type could cause a crash.
+
 ## October 27, 2022
 
 ### iOS AEPCore 3.7.2
