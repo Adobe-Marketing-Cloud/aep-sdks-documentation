@@ -96,7 +96,64 @@ end
    #import "ACPCore.h"
    #import "ACPUserProfile.h"
 ```
+{% endtab %}
 
+{% tab title="React Native" %}
+#### JavaScript
+
+1. Install Adobe Profile.
+
+   ```bash
+    npm install @adobe/react-native-acpuserprofile
+   ```
+
+2. Link the module and the application.
+
+   For React Native versions 0.6 and above, you can use the [CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) to link the module while building the app.
+
+   For React Native versions less than or equal to 0.59, you can use the following scripts:
+
+   ```bash
+    react-native link @adobe/react-native-acpuserprofile
+   ```
+
+   If you are using iOS and `cocoapods`, run:
+
+   ```bash
+    cd ios/ && pod install
+   ```
+
+3. Import the extension.
+
+   ```jsx
+    import {ACPUserProfile} from '@adobe/react-native-acpuserprofile';
+   ```
+
+4. Get the extension version.
+
+   ```jsx
+    ACPUserProfile.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPUserProfile version: " + version));
+   ```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### Flutter
+
+1. Install ACP Profile.
+
+   Instructions on installing the Profile SDK in Flutter can be found in the [official Flutter documentation](https://pub.dev/packages/flutter_acpuserprofile/install).
+
+2. Import the extension.
+
+   ```dart
+   import 'package:flutter_acpuserprofile/flutter_acpuserprofile.dart';
+   ```
+
+3. Get the extension version.
+
+   ```dart
+   String version = FlutterACPUserProfile.extensionVersion;
+   ```
 {% endtab %}
 
 {% tab title="Cordova" %}
@@ -226,16 +283,16 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 When using React Native, register Profile with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
-{% tab title="Cordova" %}
-### Cordova
-
-When using Cordova, register Profile with Mobile Core in native code as shown on the Android and iOS tabs.
-{% endtab %}
-
 {% tab title="Flutter" %}
 ### Flutter
 
 When using Flutter, register Profile with Mobile Core in native code as shown on the Android and iOS tabs.
+{% endtab %}
+
+{% tab title="Cordova" %}
+### Cordova
+
+When using Cordova, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}
